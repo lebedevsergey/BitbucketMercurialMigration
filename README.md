@@ -5,14 +5,14 @@ As you perhaps know, Bitbucket withdraws Mercurial repositories support and pret
 
 ### Prerequisites ###
 * [hggit](https://hg-git.github.io/) `Mercurial` plugin must be installed and set up
+* `PHP 7.*` and [Composer](https://getcomposer.org/) must be installed
 * SSH keys Bitbucket authentication must be [set up](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html)
 
 ### How to use it? ###
 Follow these steps:
-1. Setup `PHP 7.*` and [Composer](https://getcomposer.org/) on your workstation
-2. Run `composer install` in `src/php_scripts` folder - it will install libraries needed for PHP scripts
-3. Run `convert.sh yourBitbucketAccountPassword`  - it will copy all your Bitbucket Mercurial repositories to Git repositories with names like "git-git_yourMercurialRepositoryName"
-4. Check all converted repositories on Bitbucket (with names like "git-git_yourMercurialRepositoryName"), and if everything is Ok then (AND ONLY THEN) do whatever you want with your Bitbucket Mercurial repositories - for example, remove them 
+1. Run `composer install` in `src/php_scripts` folder - it will install libraries needed for PHP scripts
+2. Run `convert.sh yourBitbucketAccountPassword`  - it will copy all your Bitbucket Mercurial repositories to Git repositories with names like "git-git_yourMercurialRepositoryName"
+3. Check all converted repositories on Bitbucket (with names like "git-git_yourMercurialRepositoryName"), and if everything is Ok then (AND ONLY THEN) do whatever you want with your Bitbucket Mercurial repositories - for example, remove them 
 
 You can also convert repositories in semi-automatized mode - then follow these steps: 
 1. Run: `migrate.sh yourBitbucketAccountName yourBitbucketAccountPassword` - it will clone create Mercurial repository in `yourRepositoryName-hg` folder and convert it to a bare Git repository in  `yourRepositoryName-git` folder
