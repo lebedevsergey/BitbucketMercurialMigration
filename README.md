@@ -1,7 +1,7 @@
 # Bitbucket Mercurial to Git migration kit #
 
 ### What is it? ###
-As you perhaps know, Bitbucket withdraws Mercurial repositories support and pretty soon will remove all Mercurial repositories. In order to still  use Bitbucket service those of you who had been using Mercurial repositories have to convert them to Git. So I wrote a couple of Bash scripts that help to do that.
+Bitbucket withdraws Mercurial repositories support and pretty soon will remove Mercurial repositories completely. In order to still  use Bitbucket service those of you who had been using Mercurial repositories have to convert them to Git. Here is a couple of Bash and PHP scripts that helps to migrate Bitbucket Mercurial repositories to Git.
 
 ### Prerequisites ###
 * [hggit](https://hg-git.github.io/) `Mercurial` plugin must be installed and set up
@@ -12,16 +12,16 @@ As you perhaps know, Bitbucket withdraws Mercurial repositories support and pret
 Follow these steps:
 1. Run `composer install` in `src/php_scripts` folder - it will install libraries needed for PHP scripts
 2. Run `convert.sh yourBitbucketAccountPassword`  - it will copy all your Bitbucket Mercurial repositories to Git repositories with names like "git-git_yourMercurialRepositoryName"
-3. Check all converted repositories on Bitbucket (with names like "git-git_yourMercurialRepositoryName"), and if everything is Ok then (AND ONLY THEN) do whatever you want with your Bitbucket Mercurial repositories - for example, remove them 
+3. Thoroughly check all converted repositories on Bitbucket (with names like "git-git_yourMercurialRepositoryName"), and if everything is OK then (AND ONLY THEN) do whatever you want with your Bitbucket Mercurial repositories - for example, remove them 
 
-You can also convert repositories in semi-automatized mode - then follow these steps: 
+You can also convert repositories in semi-automatized mode - follow these steps: 
 1. Run: `migrate.sh yourBitbucketAccountName yourBitbucketAccountPassword` - it will clone create Mercurial repository in `yourRepositoryName-hg` folder and convert it to a bare Git repository in  `yourRepositoryName-git` folder
-2. Create Bitbucket Git repository called `git_yourRepositoryName`
-3. Run * `push_to_remote_git.sh yourBitbucketAccountName yourRepositoryName` - it will push local Git repository from `yourRepositoryName-git` folder to a remote Bitbucket Git repository that you created on previous step (unfortunately it seems that Bitbucket doesn't allow to create repositories automatically with scripts - at least for free accounts)
+2. Manually create Bitbucket Git repository called `git_yourRepositoryName`
+3. Run * `push_to_remote_git.sh yourBitbucketAccountName yourRepositoryName` - it will push local Git repository from `yourRepositoryName-git` folder to a remote Bitbucket Git repository that you created on previous step
 Or just `convert_repo.sh` script that runs sequentially `migrate.sh` and `push_to_remote_git.sh` with provided arguments. You can use it like this `run.sh yourBitbucketAccountName yourRepositoryName`, but do not forget to create Bitbucket Git `git_yourRepositoryName` repository before running it.  
 
 ### Disclaimer ###
-I do not take responsilbility for any harm or wrong that could be done with these scripts, and I didn't included any intentionally harmful actions there. Just check that yours Mercurial repositories were converted to Git correctly before removing them completely.
+I do not take any responsibility for any harm that could be done with these scripts to your repositories, however I didn't included any intentionally harmful actions in them. Just carefully check that yours Mercurial repositories were correctly converted to Git before repositories removing originals repositories.
 
 ### Author ###
 * (c) 2020 Sergey Lebedev, licensed under the Apache License, Version 2.0
