@@ -1,7 +1,10 @@
-# first argument - your Bitbucket account name, second argument - your repository name
+#!/bin/bash
+# migrates remote Mercurial repository to local Git repository
+# first argument - Bitbucket account name, second argument - Mercurial repository to convert
+
 if [ -z "$1" ] || [ -z "$2" ]
 then
-      echo "Please provide your Bitbucket account name, and repository name"
+      echo "Usage: $0 <bitbucket_user_name> <bitbucket_mercurial_repository_name>"
       exit
 fi
 
