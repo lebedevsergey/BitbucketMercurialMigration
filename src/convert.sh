@@ -2,6 +2,12 @@
 # automatic script to convert user's Bitbucket Mercurial repositories to Git
 # requres PHP
 
+if [ -z "$1" ] || [ -z "$2" ]
+then
+      echo "Usage: $0 <bitbucket_user_name> <bitbucket_user_password>"
+      exit
+fi
+
 bitbucket_user_name=$1
 bitbucket_user_password=$2
 

@@ -28,13 +28,20 @@ fi
 
 # clone the hg repository from Bitbucket
 hg clone $hgRepoRemotePath $hgRepoLocalPath
-
-# create a new bare git repository
-git init --bare $gitRepoLocalPath
-
 cd $hgRepoLocalPath
+
+# create .gitignore from .hgignore
+cp .hgignore .gitignore
+hg add .gitignore --config ui.username=$0
+#rm .hgignore
+#hg forget .hgignore --config ui.username=$0
+hg commit -m'.gitignore file added' --config ui.username=$0
+
 # create an hg branch
 hg bookmark -r default master
+
+# create a new bare git repository
+git init --bare ../$gitRepoLocalPath
 
 # push the hg repository to the local git repository
 hg push ../$gitRepoLocalPath
