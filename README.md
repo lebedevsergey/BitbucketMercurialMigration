@@ -11,7 +11,7 @@ Bitbucket withdraws Mercurial repositories support and pretty soon will remove M
 ### How to use it? ###
 Follow these steps:
 1. Run `composer install` in `src/php_scripts` folder - it will install libraries needed for PHP scripts
-2. Run `convert.sh yourBitbucketAccountPassword`  - it will copy all your Bitbucket Mercurial repositories to Git repositories with names like "git-git_yourMercurialRepositoryName"
+2. Run `convert.sh yourBitbucketAccount yourBitbucketPassword` - this will copy all your Bitbucket Mercurial repositories to Git repositories with names like "git_originalMercurialRepositoryName"
 3. Thoroughly check all converted repositories on Bitbucket (with names like "git-git_yourMercurialRepositoryName"), and if everything is OK then (AND ONLY THEN) do whatever you want with your Bitbucket Mercurial repositories - for example, remove them 
 
 You can also convert repositories in semi-automatized mode - follow these steps: 
