@@ -49,6 +49,6 @@ foreach ($repositories['values'] as $item) {
         continue;
     }
 
-    echo $item['name'] . ' ';
+    echo strtolower($item['name']) . ' ';
 }
 

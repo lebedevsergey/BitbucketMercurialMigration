@@ -27,7 +27,7 @@ git remote rm origin
 git remote add origin git@bitbucket.org:$gitRepoRemotePath
 
 
-for i in {1..REPOSITORY_PING_MAX_NUM}
+for i in `seq 1 $REPOSITORY_PING_MAX_NUM`
 do
   if git-remote-url-reachable "origin";
   then

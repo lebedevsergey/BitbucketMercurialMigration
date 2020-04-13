@@ -43,7 +43,7 @@ echo "Trying to create Git repository: $repoToCreateName\n";
 try {
     $client->repositories()->create($bitbucketUserName, $repoToCreateName, ['scm' => 'git']);
 } catch (BadRequestException $e) {
-    echo $e->getMessage() . ": $repoToCreateName\n";
+    echo "Error: " . $e->getMessage() . ": $repoToCreateName" . $e->getTraceAsString() . "\n";
     return;
 }
 

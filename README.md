@@ -3,6 +3,8 @@
 ### What is it? ###
 Bitbucket withdraws Mercurial repositories support and pretty soon will remove Mercurial repositories completely. In order to still  use Bitbucket service those of you who had been using Mercurial repositories have to convert them to Git. Here is a couple of Bash and PHP scripts that helps to migrate Bitbucket Mercurial repositories to Git.
 
+**Warning**: This utility creates public git versions of your private hg repos. Do not forget to make them private in repo settings at [bitbucket.org](https://bitbucket.org).
+
 ### Prerequisites ###
 * [hggit](https://hg-git.github.io/) `Mercurial` plugin must be installed and set up
 * `PHP 7.*` and [Composer](https://getcomposer.org/) must be installed
