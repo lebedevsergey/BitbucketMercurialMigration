@@ -41,7 +41,7 @@ $client->authenticate(Client::AUTH_HTTP_PASSWORD, $bitbucketUserName, $bitbucket
 
 echo "Trying to create Git repository: $repoToCreateName\n";
 try {
-    $client->repositories()->create($bitbucketUserName, $repoToCreateName, ['scm' => 'git']);
+    $client->repositories()->create($bitbucketUserName, $repoToCreateName, ['scm' => 'git', 'is_private' => true]);
 } catch (BadRequestException $e) {
     echo "Error: " . $e->getMessage() . ": $repoToCreateName" . $e->getTraceAsString() . "\n";
     return;
